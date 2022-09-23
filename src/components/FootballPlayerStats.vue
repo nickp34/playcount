@@ -2,7 +2,7 @@
   <v-container v-bind:style="{ 'background-color': '#e3e3e3' }">
     <v-row>
       <v-col>
-        <v-btn color="green">
+        <v-btn color="green" @click="toggleNames">
           Sort
         </v-btn>
       </v-col>
@@ -35,7 +35,7 @@ export default {
       roster: 'roster',
     }),
     sortedRoster() {
-      return this.roster;
+      return this.playersByPlayCount;
     },
   },
   methods: {

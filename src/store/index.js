@@ -106,7 +106,6 @@ const getters = {
     return state.minPlayersPerPlay;
   },
   playersByPlayCount(state) {
-    // const playCountMap = getters.totalPlaysMap(state);
     return state.roster.sort(({ playCount: a }, { playCount: b }) => a - b);
   },
   playersIn(state) {
