@@ -55,7 +55,7 @@ export default {
         return 'orange';
       }
       if (this.player.playCount < 10) {
-        return 'yellow';
+        return 'blue';
       }
       return 'green';
     },
