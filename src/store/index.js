@@ -98,7 +98,7 @@ const state = {
   plays: [],
   settings: {
     showLastName: false,
-    showPlayerCount: false,
+    showSuccess: false,
   },
 };
 
@@ -129,6 +129,9 @@ const getters = {
     });
     return cnt;
   },
+  showSuccess(state) {
+    return state.settings.showSuccess;
+  },
 };
 
 const mutations = {
@@ -153,6 +156,9 @@ const mutations = {
       state.roster[i].playStatus = 'out';
     }
   },
+  setSuccess(state, toggle) {
+    state.settings.showSuccess = toggle;
+  },
 };
 
 const actions = {
@@ -164,6 +170,12 @@ const actions = {
   },
   clearField({ commit }) {
     commit('clearField');
+  },
+  toggleSuccess({ commit }) {
+    commit('setSuccess', true);
+    setTimeout(() => {
+      commit('setSuccess', false);
+    }, 1000);
   },
 };
 

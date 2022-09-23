@@ -5,7 +5,7 @@
         <v-card>
             <v-container class="pa-1">
               <v-row dense no-gutters>
-                <v-col>
+                <v-col v-if="canSub">
                   <FootballPlayerIn :player="player" />
                 </v-col>
                 <v-col>
@@ -14,10 +14,10 @@
                 <v-col v-if="showLastName">
                   {{ player.lastName }}
                 </v-col>
-                <v-col>
+                <v-col v-if="canSub">
                   <FootballPlayerOut :player="player" />
                 </v-col>
-                <v-col v-if="showPlayerCount">
+                <v-col v-if="showPlayCount">
                   <v-chip :color="playCountColor" text-color="white">
                     {{ playCount }}
                   </v-chip>
@@ -39,6 +39,8 @@ export default {
   name: 'FootballPlayer',
   props: {
     player: Object,
+    canSub: Boolean,
+    showPlayCount: Boolean,
   },
   computed: {
     ...mapGetters([
@@ -58,9 +60,6 @@ export default {
     },
     showLastName() {
       return this.$store.state.settings.showLastName;
-    },
-    showPlayerCount() {
-      return this.$store.state.settings.showPlayerCount;
     },
   },
   components: {
