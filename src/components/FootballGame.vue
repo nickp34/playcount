@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <v-row>
-      <v-col v-for="player in onField" :key="player.jersey" cols="12" sm="4">
+      <v-col v-for="player in onField" :key="player.jersey" cols="2" sm="3">
         <FootballPlayer :player=player />
       </v-col>
     </v-row>
     <v-row>
-      <v-col v-for="player in onSideline" :key="player.jersey" cols="12" sm="4">
+      <v-col v-for="player in onSideline" :key="player.jersey" cols="2" sm="3">
         <FootballPlayer :player=player />
       </v-col>
     </v-row>
