@@ -1,5 +1,5 @@
 <template>
-  <v-icon large left :color="iconColor" @click="click">mdi-account-check</v-icon>
+  <v-icon :color="iconColor" @click="click">mdi-account-check</v-icon>
 </template>
 
 <script>
