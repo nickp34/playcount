@@ -106,6 +106,9 @@ const getters = {
   getMaxPlayers(state) {
     return state.minPlayersPerPlay;
   },
+  playersByPlayCount(state) {
+    return state.roster.sort();
+  },
   playersIn(state) {
     return state.roster.filter((p) => p.playStatus === 'in').sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
   },
@@ -118,17 +121,22 @@ const getters = {
   roster(state) {
     return state.roster;
   },
-  totalPlays: (state) => (player) => {
-    let cnt = 0;
+  totalPlaysMap(state) {
+    const playMap = {};
+
+    state.roster.forEach((p) => {
+      playMap[p.jerseyNumber] = 0;
+    });
+
     state.plays.forEach((play) => {
       play.forEach((p) => {
-        if (p.jerseyNumber === player.jerseyNumber) {
-          cnt += 1;
-        }
+        playMap[p.jerseyNumber] += 1;
       });
     });
-    return cnt;
+
+    return playMap;
   },
+  totalPlays: (state) => (player) => getters.totalPlaysMap(state)[player.jerseyNumber],
   showSuccess(state) {
     return state.settings.showSuccess;
   },
@@ -159,6 +167,9 @@ const mutations = {
   setSuccess(state, toggle) {
     state.settings.showSuccess = toggle;
   },
+  toggleNames(state) {
+    state.settings.showLastName = !state.settings.showLastName;
+  },
 };
 
 const actions = {
@@ -176,6 +187,9 @@ const actions = {
     setTimeout(() => {
       commit('setSuccess', false);
     }, 1000);
+  },
+  toggleNames({ commit }) {
+    commit('toggleNames');
   },
 };
 

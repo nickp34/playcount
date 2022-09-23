@@ -53,10 +53,13 @@ export default {
       if (this.playCount < 3) {
         return 'red';
       }
-      if (this.playCount >= 10) {
-        return 'green';
+      if (this.playCount <= 5) {
+        return 'orange';
       }
-      return 'orange';
+      if (this.playCount < 10) {
+        return 'yellow';
+      }
+      return 'green';
     },
     showLastName() {
       return this.$store.state.settings.showLastName;

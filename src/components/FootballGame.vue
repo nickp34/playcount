@@ -4,7 +4,7 @@
       <v-row>
         <v-col>
           <v-btn color="yellow" @click="undoPlay">
-            <span>Undo Play</span>
+            Undo Play
           </v-btn>
         </v-col>
         <v-col>
