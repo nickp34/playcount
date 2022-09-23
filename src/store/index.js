@@ -98,6 +98,7 @@ const state = {
   plays: [],
   settings: {
     showLastName: false,
+    showPlayerCount: false,
   },
 };
 
@@ -147,6 +148,11 @@ const mutations = {
       state.plays.pop();
     }
   },
+  clearField(state) {
+    for (let i = 0; i < state.roster.length; i += 1) {
+      state.roster[i].playStatus = 'out';
+    }
+  },
 };
 
 const actions = {
@@ -155,6 +161,9 @@ const actions = {
   },
   undoPlay({ commit }) {
     commit('undoPlay');
+  },
+  clearField({ commit }) {
+    commit('clearField');
   },
 };
 

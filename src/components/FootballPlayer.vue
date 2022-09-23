@@ -2,9 +2,9 @@
   <v-container>
     <v-row no-gutters>
       <v-col>
-        <v-card class="pa-2" outlined tile>
+        <v-card>
             <v-container>
-              <v-row>
+              <v-row dense no-gutters>
                 <v-col>
                   <FootballPlayerIn :player="player" />
                 </v-col>
@@ -17,7 +17,7 @@
                 <v-col>
                   <FootballPlayerOut :player="player" />
                 </v-col>
-                <v-col>
+                <v-col v-if="showPlayerCount">
                   <v-chip :color="playCountColor" text-color="white">
                     {{ playCount }}
                   </v-chip>
@@ -58,6 +58,9 @@ export default {
     },
     showLastName() {
       return this.$store.state.settings.showLastName;
+    },
+    showPlayerCount() {
+      return this.$store.state.settings.showPlayerCount;
     },
   },
   components: {

@@ -9,27 +9,16 @@
         <v-btn @click="undoPlay">
           <span>Undo</span>
         </v-btn>
-
-        <v-spacer></v-spacer>
-
         <v-btn :color="savePlayButtonColor" @click="savePlay">
-          <span>Save</span>
+          Save
         </v-btn>
         <v-btn :color="savePlayButtonColor">
-          <span>{{ playerInCount }}</span>
+          {{ playerInCount }}
+        </v-btn>
+        <v-btn color="orange" @click="clearField">
+          Clear
         </v-btn>
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">New Game</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -71,6 +60,9 @@ export default {
     },
     undoPlay() {
       this.$store.dispatch('undoPlay');
+    },
+    clearField() {
+      this.$store.dispatch('clearField');
     },
   },
 };
