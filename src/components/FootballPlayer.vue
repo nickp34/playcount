@@ -9,7 +9,10 @@
                   <FootballPlayerIn :player="player" />
                 </v-col>
                 <v-col>
-                  #{{ player.jerseyNumber }} {{ player.lastName }}
+                  #{{ player.jerseyNumber }}
+                </v-col>
+                <v-col v-if="showLastName">
+                  {{ player.lastName }}
                 </v-col>
                 <v-col>
                   <FootballPlayerOut :player="player" />
@@ -52,6 +55,9 @@ export default {
         return 'green';
       }
       return 'orange';
+    },
+    showLastName() {
+      return this.$store.state.settings.showLastName;
     },
   },
   components: {

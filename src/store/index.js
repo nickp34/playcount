@@ -96,6 +96,9 @@ const state = {
     },
   ],
   plays: [],
+  settings: {
+    showLastName: false,
+  },
 };
 
 const getters = {
