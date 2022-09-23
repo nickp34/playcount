@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container class="pa-0">
     <v-row no-gutters>
       <v-col>
         <v-card>
-            <v-container>
+            <v-container class="pa-1">
               <v-row dense no-gutters>
                 <v-col>
                   <FootballPlayerIn :player="player" />

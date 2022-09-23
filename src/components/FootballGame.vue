@@ -1,12 +1,10 @@
 <template>
-  <v-container class="pa-0">
-    <v-row><v-col>IN THE FIELD</v-col></v-row>
+  <v-container>
     <v-row>
       <v-col v-for="player in onField" :key="player.jersey" cols="12" sm="4">
         <FootballPlayer :player=player />
       </v-col>
     </v-row>
-    <v-row><v-col>SIDELINE</v-col></v-row>
     <v-row>
       <v-col v-for="player in onSideline" :key="player.jersey" cols="12" sm="4">
         <FootballPlayer :player=player />
