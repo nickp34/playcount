@@ -27,14 +27,14 @@
     <v-container v-bind:style="{ 'background-color': 'green' }">
       <v-row>
         <v-col v-for="player in playersIn" :key="player.jersey" cols="2" sm="3">
-          <FootballPlayer canSub :player=player />
+          <FootballPlayer :showLastName="showNames" canSub :player=player />
         </v-col>
       </v-row>
     </v-container>
     <v-container v-bind:style="{ 'background-color': '#e3e3e3' }">
       <v-row>
         <v-col v-for="player in playersOut" :key="player.jersey" cols="2" sm="3">
-          <FootballPlayer canSub :player=player />
+          <FootballPlayer :showLastName="showNames" canSub :player=player />
         </v-col>
       </v-row>
     </v-container>
