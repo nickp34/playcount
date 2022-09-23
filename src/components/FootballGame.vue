@@ -17,6 +17,11 @@
             Clear Field
           </v-btn>
         </v-col>
+        <v-col>
+          <v-btn color="green" @click="toggleNames">
+            Names
+          </v-btn>
+        </v-col>
       </v-row>
     </v-container>
     <v-container v-bind:style="{ 'background-color': 'green' }">
@@ -42,6 +47,9 @@ import FootballPlayer from './FootballPlayer.vue';
 
 export default {
   name: 'FootballGame',
+  data: () => ({
+    showNames: true,
+  }),
   computed: {
     ...mapGetters({
       playersIn: 'playersIn',
@@ -71,6 +79,9 @@ export default {
     },
     clearField() {
       this.$store.dispatch('clearField');
+    },
+    toggleNames() {
+      this.showNames = !this.showNames;
     },
   },
   components: {

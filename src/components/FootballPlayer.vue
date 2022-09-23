@@ -41,6 +41,7 @@ export default {
     player: Object,
     canSub: Boolean,
     showPlayCount: Boolean,
+    showLastName: Boolean,
   },
   computed: {
     ...mapGetters([
@@ -61,9 +62,9 @@ export default {
       }
       return 'green';
     },
-    showLastName() {
-      return this.$store.state.settings.showLastName;
-    },
+    // showLastName() {
+    //   return this.$store.state.settings.showLastName;
+    // },
   },
   components: {
     FootballPlayerIn,
