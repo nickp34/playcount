@@ -7,14 +7,14 @@
         </v-btn>
       </v-col>
       <v-col>
-        <v-btn color="green" @click="toggleNames">
+        <v-btn color="blue" @click="toggleNames">
           Names
         </v-btn>
       </v-col>
     </v-row>
     <v-row>
       <v-col v-for="player in sortedRoster" :key="player.jersey" cols="12" sm="4">
-        <FootballPlayer showPlayCount :showLastName="showNames" :player=player />
+        <FootballPlayer showPlayCount :showName="showName" :player=player />
       </v-col>
     </v-row>
   </v-container>
@@ -27,7 +27,7 @@ import FootballPlayer from './FootballPlayer.vue';
 export default {
   name: 'FootbalPlayerStats',
   data: () => ({
-    showNames: true,
+    showName: true,
   }),
   computed: {
     ...mapGetters({
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     toggleNames() {
-      this.showNames = !this.showNames;
+      this.showName = !this.showName;
     },
   },
   components: {

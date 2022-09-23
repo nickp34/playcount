@@ -8,10 +8,10 @@
                 <v-col v-if="canSub">
                   <FootballPlayerIn :player="player" />
                 </v-col>
-                <v-col>
+                <v-col v-if="!showName">
                   #{{ player.jerseyNumber }}
                 </v-col>
-                <v-col v-if="showLastName">
+                <v-col v-if="showName">
                   {{ player.lastName }}
                 </v-col>
                 <v-col v-if="canSub">
@@ -19,7 +19,7 @@
                 </v-col>
                 <v-col v-if="showPlayCount">
                   <v-chip :color="playCountColor" text-color="white">
-                    {{ playCount }}
+                    {{ player.playCount }}
                   </v-chip>
                 </v-col>
               </v-row>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+// import { mapGetters } from 'vuex';
 import FootballPlayerIn from './FootballPlayerIn.vue';
 import FootballPlayerOut from './FootballPlayerOut.vue';
 
@@ -41,30 +41,24 @@ export default {
     player: Object,
     canSub: Boolean,
     showPlayCount: Boolean,
-    showLastName: Boolean,
+    showName: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
-    ...mapGetters([
-      'totalPlays',
-    ]),
-    playCount() {
-      return this.totalPlays(this.player);
-    },
     playCountColor() {
-      if (this.playCount < 3) {
+      if (this.player.playCount < 3) {
         return 'red';
       }
-      if (this.playCount <= 5) {
+      if (this.player.playCount <= 5) {
         return 'orange';
       }
-      if (this.playCount < 10) {
+      if (this.player.playCount < 10) {
         return 'yellow';
       }
       return 'green';
     },
-    // showLastName() {
-    //   return this.$store.state.settings.showLastName;
-    // },
   },
   components: {
     FootballPlayerIn,
