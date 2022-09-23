@@ -7,18 +7,16 @@
     >
       <div class="d-flex align-center">
         <v-btn @click="undoPlay">
-          <span class="mr-2">Undo Play</span>
-          <v-icon>mdi-open-in-new</v-icon>
+          <span>Undo</span>
         </v-btn>
 
         <v-spacer></v-spacer>
 
         <v-btn :color="savePlayButtonColor" @click="savePlay">
-          <span class="mr-2">Save Play</span>
-          <v-icon>mdi-open-in-new</v-icon>
+          <span>Save</span>
         </v-btn>
         <v-btn :color="savePlayButtonColor">
-          <span class="mr-2">On Field: {{ playerInCount }}</span>
+          <span>{{ playerInCount }}</span>
         </v-btn>
       </div>
 

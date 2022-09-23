@@ -3,12 +3,24 @@
     <v-row no-gutters>
       <v-col>
         <v-card class="pa-2" outlined tile>
-            <FootballPlayerIn :player="player" />
-            #{{ player.jerseyNumber }} {{ player.lastName }}
-            <FootballPlayerOut :player="player" />
-            <v-chip :color="playCountColor" text-color="white">
-              {{ playCount }}
-            </v-chip>
+            <v-container>
+              <v-row>
+                <v-col>
+                  <FootballPlayerIn :player="player" />
+                </v-col>
+                <v-col>
+                  #{{ player.jerseyNumber }} {{ player.lastName }}
+                </v-col>
+                <v-col>
+                  <FootballPlayerOut :player="player" />
+                </v-col>
+                <v-col>
+                  <v-chip :color="playCountColor" text-color="white">
+                    {{ playCount }}
+                  </v-chip>
+                </v-col>
+              </v-row>
+          </v-container>
         </v-card>
       </v-col>
     </v-row>
