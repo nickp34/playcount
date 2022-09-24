@@ -6,18 +6,12 @@
           <v-btn color="yellow" @click="undoPlay">
             Undo
           </v-btn>
-        </v-col>
-        <v-col>
           <v-btn :color="savePlayButtonColor" @click="savePlay">
             Save {{ playerInCount }}
           </v-btn>
-        </v-col>
-        <v-col>
           <v-btn color="orange" @click="clearField">
             Clear
           </v-btn>
-        </v-col>
-        <v-col>
           <v-btn color="blue" @click="toggleNames">
             Names
           </v-btn>

@@ -8,7 +8,7 @@
                 <v-col v-if="canSub">
                   <FootballPlayerIn :player="player" />
                 </v-col>
-                <v-col v-if="!showName">
+                <v-col>
                   #{{ player.jerseyNumber }}
                 </v-col>
                 <v-col v-if="showName">
