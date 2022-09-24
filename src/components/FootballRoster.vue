@@ -2,16 +2,14 @@
   <v-container v-bind:style="{ 'background-color': '#e3e3e3' }">
     <v-row>
       <v-col>
-        <v-btn color="blue" @click="toggleNames">
-          Names
+        <v-btn color="blue">
+          Save
         </v-btn>
       </v-col>
     </v-row>
     <v-row>
       <v-col v-for="player in sortedRoster" :key="player.jersey" cols="12" sm="4">
         <FootballPlayer
-          showPlayCount
-          :showName="showName"
           :player=player
         />
       </v-col>
@@ -24,7 +22,7 @@ import { mapGetters } from 'vuex';
 import FootballPlayer from './FootballPlayer.vue';
 
 export default {
-  name: 'FootballPlayerStats',
+  name: 'FootballRoster',
   data: () => ({
     showName: true,
   }),
@@ -37,9 +35,6 @@ export default {
     },
   },
   methods: {
-    toggleNames() {
-      this.showName = !this.showName;
-    },
   },
   components: {
     FootballPlayer,
