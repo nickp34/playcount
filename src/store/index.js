@@ -11,7 +11,7 @@ const state = {
   minPlayersPerPlay: MIN_PLAYERS_PER_PLAY,
   roster: [
     {
-      firstName: 'Paxton', lastName: 'Green', jerseyNumber: 2, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Paxton', lastName: 'Green', jerseyNumber: 14, groups: [], playStatus: 'out', playCount: 0,
     },
     {
       firstName: 'Grayson', lastName: 'Cardenas ', jerseyNumber: 4, groups: [], playStatus: 'out', playCount: 0,
@@ -26,40 +26,40 @@ const state = {
       firstName: 'Nolan', lastName: 'Bales', jerseyNumber: 10, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Kellen', lastName: 'Spearman', jerseyNumber: 33, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Kellen', lastName: 'Spearman', jerseyNumber: 16, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Keller', lastName: 'Green', jerseyNumber: 35, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Keller', lastName: 'Green', jerseyNumber: 9, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Ole', lastName: 'Dimick', jerseyNumber: 40, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Ole', lastName: 'Dimick', jerseyNumber: 45, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Cameron', lastName: 'Hang ', jerseyNumber: 42, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Cameron', lastName: 'Hang ', jerseyNumber: 20, groups: [], playStatus: 'out', playCount: 0,
     },
     {
       firstName: 'Jonah', lastName: 'Miller', jerseyNumber: 44, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Mason', lastName: 'Woodard', jerseyNumber: 45, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Mason', lastName: 'Woodard', jerseyNumber: 60, groups: [], playStatus: 'out', playCount: 0,
     },
     {
       firstName: 'Rey', lastName: 'LaRosa ', jerseyNumber: 50, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Parker', lastName: 'Bass', jerseyNumber: 51, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Parker', lastName: 'Bass', jerseyNumber: 66, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Evan', lastName: 'Ouellette', jerseyNumber: 54, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Evan', lastName: 'Ouellette', jerseyNumber: 72, groups: [], playStatus: 'out', playCount: 0,
     },
     {
       firstName: 'Nolan', lastName: 'Pate', jerseyNumber: 55, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Jordan', lastName: 'Gillock', jerseyNumber: 60, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Jordan', lastName: 'Gillock', jerseyNumber: 18, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Brayden', lastName: 'Ayers', jerseyNumber: 61, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Brayden', lastName: 'Ayers', jerseyNumber: 65, groups: [], playStatus: 'out', playCount: 0,
     },
     {
       firstName: 'Henry', lastName: 'Tischhauser', jerseyNumber: 63, groups: [], playStatus: 'out', playCount: 0,
@@ -68,13 +68,13 @@ const state = {
       firstName: 'Benjamin', lastName: 'Roman', jerseyNumber: 64, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Logan', lastName: 'Minick', jerseyNumber: 71, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Logan', lastName: 'Minick', jerseyNumber: 2, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Parker', lastName: 'Clark', jerseyNumber: 74, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Parker', lastName: 'Clark', jerseyNumber: 81, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Jackson', lastName: 'Conroy', jerseyNumber: 75, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Jackson', lastName: 'Conroy', jerseyNumber: 42, groups: [], playStatus: 'out', playCount: 0,
     },
     {
       firstName: 'Baylor', lastName: 'Moehring ', jerseyNumber: 80, groups: [], playStatus: 'out', playCount: 0,
@@ -89,10 +89,10 @@ const state = {
       firstName: 'Jackson', lastName: 'Hughes ', jerseyNumber: 85, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Meyer', lastName: 'Johnson', jerseyNumber: 87, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Meyer', lastName: 'Johnson', jerseyNumber: 13, groups: [], playStatus: 'out', playCount: 0,
     },
     {
-      firstName: 'Brandon', lastName: 'Hernandez', jerseyNumber: 90, groups: [], playStatus: 'out', playCount: 0,
+      firstName: 'Brandon', lastName: 'Hernandez', jerseyNumber: 8, groups: [], playStatus: 'out', playCount: 0,
     },
   ],
   plays: [],
