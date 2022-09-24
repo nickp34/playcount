@@ -3,7 +3,15 @@
     <v-row>
       <v-col>
         <v-btn color="blue" @click="toggleNames">
-          Names
+          Toggle Names
+        </v-btn>
+        <v-btn color="green">
+          Plays {{ playCount }}
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn color="red" @click="clearData">
+          Clear Game
         </v-btn>
       </v-col>
     </v-row>
@@ -31,6 +39,7 @@ export default {
   computed: {
     ...mapGetters({
       playersByPlayCount: 'playersByPlayCount',
+      playCount: 'playCount',
     }),
     sortedRoster() {
       return this.playersByPlayCount;
@@ -39,6 +48,9 @@ export default {
   methods: {
     toggleNames() {
       this.showName = !this.showName;
+    },
+    clearData() {
+      this.$store.dispatch('clearStore');
     },
   },
   components: {

@@ -2,6 +2,12 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VuexPersist from 'vuex-persist';
+
+const vuexPersist = new VuexPersist({
+  key: 'playcount-app',
+  storage: window.localStorage,
+});
 
 Vue.use(Vuex);
 
@@ -123,9 +129,20 @@ const getters = {
   showSuccess(state) {
     return state.settings.showSuccess;
   },
+  playCount(state) {
+    return state.plays.length;
+  },
 };
 
 const mutations = {
+  clearStore(state) {
+    for (let i = 0; i < state.roster.length; i += 1) {
+      const p = state.roster[i];
+      p.playCount = 0;
+      p.playStatus = 'out';
+    }
+    state.plays = [];
+  },
   playerIn(state, player) {
     const p = state.roster.find((p) => p.jerseyNumber === player.jerseyNumber);
     p.playStatus = 'in';
@@ -191,6 +208,9 @@ const actions = {
   toggleNames({ commit }) {
     commit('toggleNames');
   },
+  clearStore({ commit }) {
+    commit('clearStore');
+  },
 };
 
 const store = new Vuex.Store({
@@ -198,6 +218,7 @@ const store = new Vuex.Store({
   getters,
   mutations,
   state,
+  plugins: [vuexPersist.plugin],
 });
 
 export default store;
