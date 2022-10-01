@@ -3,16 +3,16 @@
     <v-container class="pa-0">
       <v-row>
         <v-col>
-          <input v-model="firstName" />
+          <v-text-field v-model="firstName" />
         </v-col>
 
         <v-col>
-          <input
+          <v-text-field
             v-model="lastName" />
         </v-col>
 
         <v-col>
-          <input v-model="jersey" />
+          <v-text-field v-model="jersey" />
         </v-col>
 
         <v-col>

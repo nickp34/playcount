@@ -116,7 +116,9 @@ const state = {
 
 const getters = {
   playingRoster(state) {
-    return state.roster.filter((p) => p.isPlaying === true);
+    return state.roster
+      .filter((p) => p.isPlaying === true)
+      .sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
   },
   getMaxPlayers(state) {
     return state.minPlayersPerPlay;
