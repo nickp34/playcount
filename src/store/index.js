@@ -100,6 +100,12 @@ const state = {
     {
       firstName: 'Brandon', lastName: 'Hernandez', jerseyNumber: 8, groups: [], playStatus: 'out', playCount: 0,
     },
+    {
+      firstName: 'David', lastName: 'Cardenas', jerseyNumber: 19, groups: [], playStatus: 'out', playCount: 0,
+    },
+    {
+      firstName: 'Jake', lastName: 'DeAngelo', jerseyNumber: 40, groups: [], playStatus: 'out', playCount: 0,
+    },
   ],
   plays: [],
   settings: {
