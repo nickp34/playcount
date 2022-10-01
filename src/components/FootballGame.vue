@@ -49,7 +49,6 @@ export default {
       playersIn: 'playersIn',
       playersOut: 'playersOut',
       getMaxPlayers: 'getMaxPlayers',
-      roster: 'roster',
       plays: 'plays',
     }),
     playerInCount() {

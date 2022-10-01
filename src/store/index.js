@@ -12,101 +12,102 @@ const vuexPersist = new VuexPersist({
 Vue.use(Vuex);
 
 const MIN_PLAYERS_PER_PLAY = 11;
+const baseRoster = [
+  {
+    firstName: 'Paxton', lastName: 'Green', jerseyNumber: 14, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Grayson', lastName: 'Cardenas ', jerseyNumber: 4, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Brendan', lastName: 'Hughart', jerseyNumber: 5, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Brantley', lastName: 'Taylor ', jerseyNumber: 6, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Nolan', lastName: 'Bales', jerseyNumber: 10, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Kellen', lastName: 'Spearman', jerseyNumber: 16, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Keller', lastName: 'Green', jerseyNumber: 9, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Ole', lastName: 'Dimick', jerseyNumber: 45, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Cameron', lastName: 'Hang ', jerseyNumber: 20, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Jonah', lastName: 'Miller', jerseyNumber: 44, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Mason', lastName: 'Woodard', jerseyNumber: 60, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Rey', lastName: 'LaRosa ', jerseyNumber: 50, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Parker', lastName: 'Bass', jerseyNumber: 66, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Evan', lastName: 'Ouellette', jerseyNumber: 72, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Nolan', lastName: 'Pate', jerseyNumber: 55, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Jordan', lastName: 'Gillock', jerseyNumber: 18, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Brayden', lastName: 'Ayers', jerseyNumber: 65, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Henry', lastName: 'Tischhauser', jerseyNumber: 63, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Benjamin', lastName: 'Roman', jerseyNumber: 64, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Logan', lastName: 'Minick', jerseyNumber: 2, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Parker', lastName: 'Clark', jerseyNumber: 81, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Jackson', lastName: 'Conroy', jerseyNumber: 42, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Baylor', lastName: 'Moehring ', jerseyNumber: 80, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Cameron', lastName: 'Moore', jerseyNumber: 83, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Logan', lastName: 'Niessner', jerseyNumber: 84, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Jackson', lastName: 'Hughes ', jerseyNumber: 85, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Meyer', lastName: 'Johnson', jerseyNumber: 13, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Brandon', lastName: 'Hernandez', jerseyNumber: 8, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'David', lastName: 'Cardenas', jerseyNumber: 19, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+  {
+    firstName: 'Jake', lastName: 'DeAngelo', jerseyNumber: 40, groups: [], playStatus: 'out', playCount: 0, isPlaying: true,
+  },
+];
 
 const state = {
   minPlayersPerPlay: MIN_PLAYERS_PER_PLAY,
-  roster: [
-    {
-      firstName: 'Paxton', lastName: 'Green', jerseyNumber: 14, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Grayson', lastName: 'Cardenas ', jerseyNumber: 4, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Brendan', lastName: 'Hughart', jerseyNumber: 5, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Brantley', lastName: 'Taylor ', jerseyNumber: 6, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Nolan', lastName: 'Bales', jerseyNumber: 10, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Kellen', lastName: 'Spearman', jerseyNumber: 16, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Keller', lastName: 'Green', jerseyNumber: 9, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Ole', lastName: 'Dimick', jerseyNumber: 45, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Cameron', lastName: 'Hang ', jerseyNumber: 20, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Jonah', lastName: 'Miller', jerseyNumber: 44, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Mason', lastName: 'Woodard', jerseyNumber: 60, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Rey', lastName: 'LaRosa ', jerseyNumber: 50, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Parker', lastName: 'Bass', jerseyNumber: 66, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Evan', lastName: 'Ouellette', jerseyNumber: 72, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Nolan', lastName: 'Pate', jerseyNumber: 55, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Jordan', lastName: 'Gillock', jerseyNumber: 18, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Brayden', lastName: 'Ayers', jerseyNumber: 65, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Henry', lastName: 'Tischhauser', jerseyNumber: 63, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Benjamin', lastName: 'Roman', jerseyNumber: 64, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Logan', lastName: 'Minick', jerseyNumber: 2, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Parker', lastName: 'Clark', jerseyNumber: 81, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Jackson', lastName: 'Conroy', jerseyNumber: 42, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Baylor', lastName: 'Moehring ', jerseyNumber: 80, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Cameron', lastName: 'Moore', jerseyNumber: 83, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Logan', lastName: 'Niessner', jerseyNumber: 84, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Jackson', lastName: 'Hughes ', jerseyNumber: 85, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Meyer', lastName: 'Johnson', jerseyNumber: 13, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Brandon', lastName: 'Hernandez', jerseyNumber: 8, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'David', lastName: 'Cardenas', jerseyNumber: 19, groups: [], playStatus: 'out', playCount: 0,
-    },
-    {
-      firstName: 'Jake', lastName: 'DeAngelo', jerseyNumber: 40, groups: [], playStatus: 'out', playCount: 0,
-    },
-  ],
+  roster: baseRoster,
   plays: [],
   settings: {
     showSuccess: false,
@@ -114,17 +115,22 @@ const state = {
 };
 
 const getters = {
+  playingRoster(state) {
+    return state.roster.filter((p) => p.isPlaying === true);
+  },
   getMaxPlayers(state) {
     return state.minPlayersPerPlay;
   },
-  playersByPlayCount(state) {
-    return state.roster.sort(({ playCount: a }, { playCount: b }) => a - b);
+  playersByPlayCount(state, getters) {
+    return getters.playingRoster
+      .sort(({ playCount: a }, { playCount: b }) => a - b)
+      .sort(({ lastName: a }, { lastName: b }) => a - b);
   },
-  playersIn(state) {
-    return state.roster.filter((p) => p.playStatus === 'in').sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
+  playersIn(state, getters) {
+    return getters.playingRoster.filter((p) => p.playStatus === 'in').sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
   },
-  playersOut(state) {
-    return state.roster.filter((p) => p.playStatus === 'out').sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
+  playersOut(state, getters) {
+    return getters.playingRoster.filter((p) => p.playStatus === 'out').sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
   },
   plays(state) {
     return state.plays;
@@ -142,11 +148,7 @@ const getters = {
 
 const mutations = {
   clearStore(state) {
-    for (let i = 0; i < state.roster.length; i += 1) {
-      const p = state.roster[i];
-      p.playCount = 0;
-      p.playStatus = 'out';
-    }
+    state.roster = state.originalRoster;
     state.plays = [];
   },
   playerIn(state, player) {
@@ -193,6 +195,21 @@ const mutations = {
   setSuccess(state, toggle) {
     state.settings.showSuccess = toggle;
   },
+  savePlayer(state, payload) {
+    const p = state.roster.find((p) => p.jerseyNumber === payload.player.jerseyNumber);
+    if (payload.action === 'firstName') {
+      p.firstName = payload.value;
+    }
+    if (payload.action === 'lastName') {
+      p.lastName = payload.value;
+    }
+    if (payload.action === 'jerseyNumber') {
+      p.jerseyNumber = payload.value;
+    }
+    if (payload.action === 'isPlaying') {
+      p.isPlaying = payload.value;
+    }
+  },
 };
 
 const actions = {
@@ -216,6 +233,9 @@ const actions = {
   },
   clearStore({ commit }) {
     commit('clearStore');
+  },
+  savePlayer({ commit }, payload) {
+    commit('savePlayer', payload);
   },
 };
 

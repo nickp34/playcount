@@ -31,7 +31,6 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex';
 import FootballPlayerIn from './FootballPlayerIn.vue';
 import FootballPlayerOut from './FootballPlayerOut.vue';
 

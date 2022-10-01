@@ -1,15 +1,8 @@
 <template>
   <v-container v-bind:style="{ 'background-color': '#e3e3e3' }">
     <v-row>
-      <v-col>
-        <v-btn color="blue">
-          Save
-        </v-btn>
-      </v-col>
-    </v-row>
-    <v-row>
       <v-col v-for="player in sortedRoster" :key="player.jersey" cols="12" sm="4">
-        <FootballPlayer
+        <FootballPlayerEdit
           :player=player
         />
       </v-col>
@@ -19,7 +12,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import FootballPlayer from './FootballPlayer.vue';
+import FootballPlayerEdit from './FootballPlayerEdit.vue';
 
 export default {
   name: 'FootballRoster',
@@ -37,7 +30,7 @@ export default {
   methods: {
   },
   components: {
-    FootballPlayer,
+    FootballPlayerEdit,
   },
 };
 </script>
