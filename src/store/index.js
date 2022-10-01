@@ -148,7 +148,7 @@ const getters = {
 
 const mutations = {
   clearStore(state) {
-    state.roster = state.originalRoster;
+    state.roster = baseRoster;
     state.plays = [];
   },
   playerIn(state, player) {
