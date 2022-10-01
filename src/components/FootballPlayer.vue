@@ -2,21 +2,21 @@
   <v-container class="pa-0">
     <v-row no-gutters>
       <v-col>
-        <v-card>
+        <v-card @click="togglePlayer">
             <v-container class="pa-1">
               <v-row dense no-gutters>
-                <v-col v-if="canSub">
+                <!-- <v-col v-if="canSub">
                   <FootballPlayerIn :player="player" />
-                </v-col>
+                </v-col> -->
                 <v-col>
                   #{{ player.jerseyNumber }}
                 </v-col>
                 <v-col v-if="showName">
                   {{ player.lastName }}
                 </v-col>
-                <v-col v-if="canSub">
+                <!-- <v-col v-if="canSub">
                   <FootballPlayerOut :player="player" />
-                </v-col>
+                </v-col> -->
                 <v-col v-if="showPlayCount">
                   <v-chip :color="playCountColor" text-color="white">
                     {{ player.playCount }}
@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import FootballPlayerIn from './FootballPlayerIn.vue';
-import FootballPlayerOut from './FootballPlayerOut.vue';
+// import FootballPlayerIn from './FootballPlayerIn.vue';
+// import FootballPlayerOut from './FootballPlayerOut.vue';
 
 export default {
   name: 'FootballPlayer',
@@ -59,9 +59,18 @@ export default {
       return 'green';
     },
   },
-  components: {
-    FootballPlayerIn,
-    FootballPlayerOut,
+  methods: {
+    togglePlayer() {
+      if (this.player.playStatus === 'in') {
+        this.$store.commit('playerOut', this.player);
+      } else {
+        this.$store.commit('playerIn', this.player);
+      }
+    },
   },
+  // components: {
+  //   FootballPlayerIn,
+  //   FootballPlayerOut,
+  // },
 };
 </script>
