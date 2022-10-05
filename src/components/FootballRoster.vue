@@ -1,7 +1,7 @@
 <template>
   <v-container v-bind:style="{ 'background-color': '#e3e3e3' }">
     <v-row>
-      <v-col v-for="player in sortedRoster" :key="player.jersey" cols="12" sm="4">
+      <v-col v-for="player in roster" :key="player.jersey" cols="12" sm="4">
         <FootballPlayerEdit
           :player=player
         />
@@ -21,11 +21,8 @@ export default {
   }),
   computed: {
     ...mapGetters({
-      playersByPlayCount: 'playersByPlayCount',
+      roster: 'roster',
     }),
-    sortedRoster() {
-      return this.playersByPlayCount;
-    },
   },
   methods: {
   },

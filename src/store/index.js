@@ -106,10 +106,11 @@ const baseRoster = [
 ];
 
 const state = {
-  minPlayersPerPlay: MIN_PLAYERS_PER_PLAY,
-  roster: baseRoster,
+  games: [],
   plays: [],
+  roster: baseRoster,
   settings: {
+    minPlayersPerPlay: MIN_PLAYERS_PER_PLAY,
     showSuccess: false,
   },
 };
@@ -121,7 +122,7 @@ const getters = {
       .sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b);
   },
   getMaxPlayers(state) {
-    return state.minPlayersPerPlay;
+    return state.settings.minPlayersPerPlay;
   },
   playersByPlayCount(state, getters) {
     return getters.playingRoster
@@ -138,7 +139,9 @@ const getters = {
     return state.plays;
   },
   roster(state) {
-    return state.roster;
+    return state.roster
+      .sort(({ jerseyNumber: a }, { jerseyNumber: b }) => a - b)
+      .sort(({ lastName: a }, { lastName: b }) => a - b);
   },
   showSuccess(state) {
     return state.settings.showSuccess;
